@@ -1,0 +1,29 @@
+GET http://127.0.0.1:5000/ad/
+Content-Type: application/json
+
+####
+
+POST http://127.0.0.1:5000/ad
+Content-Type: application/json
+
+{
+    "title": "Продам диван",
+    "description": "Диван зеленый, 2 метра",
+    "owner": "Степан Витальевич"
+}
+
+####
+
+PUT http://127.0.0.1:5000/ad/6
+Content-Type: application/json
+
+{
+    "title": "Продам стол",
+    "description": "Стол из массива",
+    "owner": "Николай Иванович В."
+
+}
+
+####
+
+DELETE http://127.0.0.1:5000/ad/7

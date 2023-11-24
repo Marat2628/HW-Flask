@@ -1,0 +1,37 @@
+>>> from models import Advertisement
+>>> v = Advertisement.query.all()
+>>> v
+[]
+>>> v1 = Advertisement(title='Продам Гараж', description='Гараж, 15 кв.м. с ямой', owner='Иваныч')
+>>> from app import session
+>>> session.add(v1)
+>>> session.commit()
+>>> v
+[<models.Advertisement object at 0x7f97746800d0>, <models.Advertisement object at 0x7f97746800a0>, <models.Advertisement object at 0x7f97746801c0>]
+>>> v[1].title
+'Продам Гараж'
+>>> v[1].owner
+'Иваныч'
+>>> v[1].description
+'Гараж, 15 кв.м. с ямой'
+
+>>> v2 = Advertisement(title='Продам швейную машину', description='Швейная машина Toyota', owner='Ирина Стапановна')
+>>> from app import session
+>>> session.add(v2)
+>>> session.commit()
+>>> v[2].owner
+'Ирина Стапановна'
+>>> v[2].title
+'Продам швейную машину'
+>>>
+>>> v3 = Advertisement(title='Продам палатку', description='Палатка походная на 7 спальных мест', owner='Игорь')
+>>> from app import session
+>>> session.add(v3)
+>>> session.commit()
+>>> from models import Advertisement
+>>> v = Advertisement.query.all()
+>>> v[3].owner
+'Игорь'
+>>> v[3].description
+'Палатка походная на 7 спальных мест'
+>>>
